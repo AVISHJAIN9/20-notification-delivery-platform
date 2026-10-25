@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniPost — Notification Delivery Platform Operations Console</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">📬</div>
+        <div class="brand-text">
+          <h2>OmniPost</h2>
+          <span>Notification Engine</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="#console" id="nav-console" class="nav-item active">
+          <span class="icon">📡</span> Delivery Overview
+        </a>
+        <a href="#providers" id="nav-providers" class="nav-item">
+          <span class="icon">🔌</span> Provider Dashboard
+        </a>
+        <a href="#queues" id="nav-queues" class="nav-item">
+          <span class="icon">📊</span> Queue Monitoring
+        </a>
+        <a href="#dlq" id="nav-dlq" class="nav-item">
+          <span class="icon">⚠️</span> Dead-Letter Viewer
+        </a>
+      </nav>
+      <div class="system-status">
+        <div class="pulse-indicator"></div>
+        <span>Dispatch Core Active (8200)</span>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="top-header">
+        <div class="header-breadcrumb">
+          <span>Operations</span> / <span id="current-view-title" class="current">Live Delivery Console</span>
+        </div>
+        <div class="header-actions">
+          <button id="btn-refresh" class="btn btn-secondary">Refresh</button>
+          <button id="btn-quick-dispatch" class="btn btn-primary">+ New Notification</button>
+        </div>
+      </header>
+
+      <!-- VIEW 1: Overview & Console (NTF-139) -->
+      <div id="view-overview" class="console-view active">
+        <!-- KPI Metrics Row -->
+        <section class="metrics-grid">
+          <div class="metric-card glass-panel">
+            <div class="metric-header">
+              <span>Delivered Today</span>
+              <span class="metric-icon success">✓</span>
+            </div>
+            <div class="metric-value font-mono" id="val-delivered">0</div>
+            <div class="metric-subtext">99.8% Success Rate</div>
+          </div>
+          <div class="metric-card glass-panel">
+            <div class="metric-header">
+              <span>In Flight / Queued</span>
+              <span class="metric-icon info">⏳</span>
+            </div>
+            <div class="metric-value font-mono" id="val-queued">0</div>
+            <div class="metric-subtext">Priority Rate-Limited</div>
+          </div>
+          <div class="metric-card glass-panel">
+            <div class="metric-header">
+              <span>Suppressed</span>
+              <span class="metric-icon warning">🛡️</span>
+            </div>
+            <div class="metric-value font-mono" id="val-suppressed">0</div>
+            <div class="metric-subtext">Opt-out / Quiet Hours</div>
+          </div>
+          <div class="metric-card glass-panel">
+            <div class="metric-header">
+              <span>Failed / Retried</span>
+              <span class="metric-icon danger">✕</span>
+            </div>
+            <div class="metric-value font-mono" id="val-failed">0</div>
+            <div class="metric-subtext">Auto-Fallback Enabled</div>
+          </div>
+        </section>
+
+        <!-- Dispatch Form & Live Logs Layout -->
+        <div class="console-layout">
+          <!-- Quick Dispatch Card -->
+          <section class="glass-panel" id="dispatch-form-panel">
+            <div class="panel-header">
+              <h3>Direct Notification Dispatch</h3>
+              <span class="pill-badge">Port 8200</span>
+            </div>
+
+            <form id="notification-form" class="dispatch-form">
+              <div class="form-group">
+                <label for="input-channel">Delivery Channel</label>
+                <select id="input-channel" class="form-input">
+                  <option value="EMAIL">Email (SMTP / SES)</option>
+                  <option value="SMS">SMS (Twilio / E.164)</option>
+                  <option value="WEBHOOK">Webhook (HMAC-SHA256)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="input-recipient">Recipient Destination</label>
+                <input type="text" id="input-recipient" placeholder="user@example.com or +14155552671" required class="form-input">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="input-priority">Priority</label>
+                  <select id="input-priority" class="form-input">
+                    <option value="NORMAL">NORMAL (Weight 10)</option>
+                    <option value="HIGH">HIGH (Weight 50)</option>
+                    <option value="URGENT">URGENT (Weight 100 - Bypass)</option>
+                    <option value="LOW">LOW (Weight 0)</option>
+                  </select>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="input-user-id">User ID</label>
+                  <input type="text" id="input-user-id" value="user-prod-001" required class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group" id="group-subject">
+                <label for="input-subject">Subject Line</label>
+                <input type="text" id="input-subject" placeholder="Important Security Alert" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label for="input-body">Message Content</label>
+                <textarea id="input-body" rows="3" placeholder="Notification message body..." required class="form-input"></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-dispatch" class="btn btn-primary full-width">Dispatch Notification</button>
+            </form>
+          </section>
+
+          <!-- Live Delivery Log Feed -->
+          <section class="glass-panel" id="delivery-feed-panel">
+            <div class="panel-header">
+              <h3>Live Delivery Activity Feed</h3>
+              <div class="filter-controls">
+                <select id="filter-channel" class="filter-select">
+                  <option value="ALL">All Channels</option>
+                  <option value="EMAIL">Email</option>
+                  <option value="SMS">SMS</option>
+                  <option value="WEBHOOK">Webhook</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-wrapper">
+              <table class="data-table" id="delivery-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Notification ID</th>
+                    <th>Channel</th>
+                    <th>Recipient</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th class="text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="delivery-tbody">
+                  <!-- Activity records injected via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- VIEW 2: Provider Dashboard (NTF-141) -->
+      <div id="view-providers" class="console-view" style="display: none;">
+        <section class="glass-panel" id="section-providers">
+          <div class="panel-header">
+            <h3>Channel Provider Fleet &amp; Health</h3>
+            <span class="pill-badge">Active Providers</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="provider-table">
+              <thead>
+                <tr>
+                  <th>Provider ID</th>
+                  <th>Channel</th>
+                  <th>Health Status</th>
+                  <th>Active</th>
+                  <th>Rate Limit</th>
+                  <th class="text-right">p95 Latency</th>
+                </tr>
+              </thead>
+              <tbody id="provider-tbody">
+                <!-- Provider data injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- VIEW 3: Queue Monitoring (NTF-146) -->
+      <div id="view-queues" class="console-view" style="display: none;">
+        <section class="glass-panel" id="section-queues">
+          <div class="panel-header">
+            <h3>Priority Queue Depth &amp; Worker Concurrency</h3>
+            <span class="pill-badge">SKIP LOCKED Leases</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="queue-table">
+              <thead>
+                <tr>
+                  <th>Queue Name</th>
+                  <th>Depth (Pending Items)</th>
+                  <th>Active Worker Leases</th>
+                  <th>Routing Policy</th>
+                </tr>
+              </thead>
+              <tbody id="queue-tbody">
+                <!-- Queue data injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- VIEW 4: Dead-Letter Viewer (NTF-148) -->
+      <div id="view-dlq" class="console-view" style="display: none;">
+        <section class="glass-panel" id="section-dlq">
+          <div class="panel-header">
+            <h3>Dead-Letter Queue (Failed Exhausted Notifications)</h3>
+            <span class="pill-badge">DLQ Manager</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="data-table" id="dlq-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Notification ID</th>
+                  <th>Channel</th>
+                  <th>Failure Reason</th>
+                  <th>Status</th>
+                  <th class="text-right">Retry Action</th>
+                </tr>
+              </thead>
+              <tbody id="dlq-tbody">
+                <!-- DLQ items injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- VIEW 5: Delivery Detail Modal (NTF-150) -->
+      <div id="modal-delivery-detail" class="modal-overlay" style="display: none;">
+        <div class="modal-card glass-panel">
+          <div class="modal-header">
+            <h3>Notification Inspection Details</h3>
+            <button id="btn-close-modal" class="btn btn-secondary">✕ Close</button>
+          </div>
+          <div class="modal-body">
+            <div class="detail-row">
+              <span class="detail-label">Notification ID:</span>
+              <span id="detail-id" class="detail-value font-mono"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Status:</span>
+              <span id="detail-status" class="detail-value"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Channel:</span>
+              <span id="detail-channel" class="detail-value"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Recipient:</span>
+              <span id="detail-recipient" class="detail-value"></span>
+            </div>
+            <div class="detail-section">
+              <h4>Delivery Attempt History</h4>
+              <div id="detail-attempts-list" class="attempts-container">
+                <!-- Delivery attempt records -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

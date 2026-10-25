@@ -1,0 +1,51 @@
+id,feature,layers,priority,area,rank
+NTF-002,Template database,BE+DB,P0,Area Database & Distributed Infrastructure,r25
+NTF-005,Provider configuration store,BE+DB,P0,Area Database & Distributed Infrastructure,r26
+NTF-006,Scheduled-job store,BE+DB,P0,Area Database & Distributed Infrastructure,r27
+NTF-008,Audit store,BE+DB,P0,Area Database & Distributed Infrastructure,r28
+NTF-016,Message normalization,BE,P0,Area Notification Core,r21
+NTF-017,Template selection,BE,P0,Area Notification Core,r22
+NTF-018,Notification ID generation,BE,P0,Area Notification Core,r23
+NTF-023,Tenant attribution,BE,P0,Area Notification Core,r24
+NTF-030,Template approval,BE+DB,P1,Area Templates & Personalization,r29
+NTF-032,Template deactivation,BE+DB,P1,Area Templates & Personalization,r30
+NTF-037,Language selection,BE+DB,P1,Area Templates & Personalization,r32
+NTF-039,Conditional template blocks,BE+DB,P1,Area Templates & Personalization,r31
+NTF-041,Subject generation,BE+DB,P1,Area Templates & Personalization,r33
+NTF-048,Provider registry,BE+DB,P0,Area Channels & Providers,r10
+NTF-049,Provider credentials,BE+DB,P0,Area Channels & Providers,r11
+NTF-051,Provider capability matrix,BE+DB,P0,Area Channels & Providers,r12
+NTF-052,Provider selection,BE+DB,P0,Area Channels & Providers,r9
+NTF-054,Provider fallback,BE+DB,P0,Area Channels & Providers,r8
+NTF-057,Priority queue,BE+DB,P0,Area Queues & Delivery Scheduling,r15
+NTF-059,Scheduled queue,BE+DB,P0,Area Queues & Delivery Scheduling,r16
+NTF-068,Worker polling,BE+DB,P0,Area Queues & Delivery Scheduling,r13
+NTF-069,Concurrent workers,BE+DB,P0,Area Queues & Delivery Scheduling,r14
+NTF-075,Non-retryable error classification,BE+DB,P0,Area Retries & Failure Handling,r4
+NTF-076,Provider timeout handling,BE+DB,P0,Area Retries & Failure Handling,r6
+NTF-077,Network failure handling,BE+DB,P0,Area Retries & Failure Handling,r7
+NTF-078,Rate-limit response handling,BE+DB,P0,Area Retries & Failure Handling,r5
+NTF-081,Dead-letter processing,BE+DB,P0,Area Retries & Failure Handling,r1
+NTF-082,Manual retry,BE+DB,P0,Area Retries & Failure Handling,r3
+NTF-083,Replay failed notification,BE+DB,P0,Area Retries & Failure Handling,r2
+NTF-084,User notification preferences,BE+DB,P1,Area User Preferences & Routing,r17
+NTF-087,Category preferences,BE+DB,P1,Area User Preferences & Routing,r18
+NTF-089,Timezone-aware delivery,BE+DB,P1,Area User Preferences & Routing,r19
+NTF-093,Preferred channel,BE+DB,P1,Area User Preferences & Routing,r20
+NTF-101,Delivery API,BE,P0,Area Backend APIs & Services,r38
+NTF-103,Scheduling API,BE,P0,Area Backend APIs & Services,r40
+NTF-105,Retry API,BE,P0,Area Backend APIs & Services,r39
+NTF-109,Health endpoint,BE,P0,Area Backend APIs & Services,r41
+NTF-110,Readiness endpoint,BE,P0,Area Backend APIs & Services,r42
+NTF-114,Structured logs,BE,P1,Area Observability & Analytics,r43
+NTF-116,Delivery success metrics,BE,P1,Area Observability & Analytics,r44
+NTF-117,Delivery failure metrics,BE,P1,Area Observability & Analytics,r45
+NTF-125,API authentication,BE,P1,Area Security, Compliance & AI,r34
+NTF-126,RBAC,BE,P1,Area Security, Compliance & AI,r35
+NTF-127,Tenant isolation,BE,P1,Area Security, Compliance & AI,r36
+NTF-133,Audit logging,BE,P1,Area Security, Compliance & AI,r37
+NTF-139,Delivery overview,FE+BE,P1,Area Frontend & Operations Console,r50
+NTF-141,Provider dashboard,FE+BE,P1,Area Frontend & Operations Console,r49
+NTF-146,Queue monitoring,FE+BE,P1,Area Frontend & Operations Console,r48
+NTF-148,Dead-letter viewer,FE+BE,P1,Area Frontend & Operations Console,r46
+NTF-150,Delivery detail view,FE+BE,P1,Area Frontend & Operations Console,r47

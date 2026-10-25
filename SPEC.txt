@@ -1,0 +1,50 @@
+# SPEC: 20-notification-delivery-platform
+# MVP Specification & Invariants
+
+Platform: Notification Delivery Platform
+Ports:
+  API: 8200
+  Frontend: 5200
+  PostgreSQL: 5420
+  Redis: 6320
+
+Core Responsibilities:
+1. High-throughput notification request ingestion with deduplication (idempotency key) and schema validation.
+2. Multi-channel delivery engine: Email, SMS, Webhook, and In-App notification routing.
+3. Priority and scheduled queues: URGENT, HIGH, NORMAL, LOW with rate-limited dispatch and delay scheduling.
+4. Dynamic template rendering with versioning, variable substitution, and user attribute personalization.
+5. User preference enforcement: channel preferences, opt-out management, frequency capping, and quiet hours.
+6. Reliability: Exponential backoff retries, dead-letter queue (DLQ), and provider fallback routing.
+7. Operations console: Real-time notification status tracking, dispatch controls, and delivery logs.
+
+Invariants:
+- Exactly-once delivery semantics enforced by unique constraint on (tenant_id, idempotency_key).
+- Respects user opt-out and quiet hours suppression before dispatching to external providers.
+- State machine transitions monotonically: PENDING -> QUEUED -> DISPATCHING -> DELIVERED (or FAILED / SUPPRESSED).
+- Failed delivery attempts record error classifications, backoff retry schedules, or DLQ transitions.
+
+Phase 2 Invariants & Scenarios:
+- Dead-letter reprocessing, manual retry and replay re-enter the pipeline with a NEW attempt record and an audit entry and never duplicate a delivered notification;
+- Non-retryable vs retryable classification table-tested (4xx/5xx/timeout/network/429 with Retry-After honored);
+- Provider selection by capability, health and cost is deterministic given the same inputs;
+- Fallback providers are used in the configured order and never double-send where idempotency keys exist;
+- Provider credentials are encrypted, masked on output and never returned by any API;
+- Template approval/deactivation enforce role checks and illegal transitions are rejected (table-driven);
+- Conditional blocks and language fallback chain tested;
+- Subject generation has deterministic fallbacks (no ML);
+- Priority queue order exact with starvation protection;
+- Scheduled queue fires at the due time (injected clock + one real-time test);
+- Worker polling uses FOR UPDATE SKIP LOCKED and 20 concurrent workers never process one job twice when no faults are injected;
+- Preferences are law across timezones including DST (timezone-aware delivery, category preferences, preferred channel);
+- Every admin action writes an audit entry;
+- RBAC and tenant isolation (RLS + app checks) proven adversarially.
+
+Scenarios:
+- S20-04: provider failure -> circuit opens -> fallback used, health visible in the UI
+- S20-05: DLQ, manual retry, replay
+- S20-06: preference/quiet-hours/frequency-cap/timezone matrix with DST
+- S20-07: template workflow (approve/activate/deactivate), localization fallback, conditional blocks, SSTI blocked
+- S20-08: 20 concurrent workers drain 10,000 jobs (exactly once without faults, none lost with faults)
+- S20-09: scheduled/delayed queues fire at the due time
+- S20-13: measured throughput and latency (only measured numbers)
+

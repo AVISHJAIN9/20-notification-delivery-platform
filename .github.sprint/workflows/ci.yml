@@ -1,0 +1,29 @@
+name: Project 20 CI
+
+on:
+  push:
+    paths:
+      - 'platforms/projects/20-notification-delivery-platform/**'
+  pull_request:
+    paths:
+      - 'platforms/projects/20-notification-delivery-platform/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platforms/projects/20-notification-delivery-platform
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: |
+          pip install pytest pytest-asyncio httpx sqlalchemy aiosqlite pydantic fastapi uvicorn
+      - name: Run test suite
+        run: |
+          PYTHONPATH=backend/src python -m pytest backend/tests frontend/tests -v

@@ -1,0 +1,184 @@
+2026-10-24T09:05:43.179457+00:00 | ALL | NONE -> NOT_DONE | Initialized 150 features
+2026-10-24T11:26:04.949600+00:00 | ALL | NONE -> TODO | Initialized 40 features
+2026-10-24T11:29:57.430714+00:00 | NTF-001 | TODO -> WORKING | Started feature
+2026-10-24T11:29:58.338850+00:00 | NTF-001 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:29:58.406416+00:00 | NTF-002 | TODO -> WORKING | Started feature
+2026-10-24T11:29:59.133769+00:00 | NTF-002 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:29:59.194245+00:00 | NTF-003 | TODO -> WORKING | Started feature
+2026-10-24T11:29:59.896003+00:00 | NTF-003 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:30:07.278767+00:00 | NTF-004 | TODO -> WORKING | Started feature
+2026-10-24T11:30:08.084768+00:00 | NTF-004 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:30:08.147481+00:00 | NTF-005 | TODO -> WORKING | Started feature
+2026-10-24T11:30:08.851601+00:00 | NTF-005 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:30:08.913049+00:00 | NTF-006 | TODO -> WORKING | Started feature
+2026-10-24T11:30:09.614224+00:00 | NTF-006 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:30:09.675257+00:00 | NTF-007 | TODO -> WORKING | Started feature
+2026-10-24T11:30:10.368649+00:00 | NTF-007 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:31:56.297052+00:00 | NTF-014 | TODO -> WORKING | Started feature
+2026-10-24T11:31:57.221440+00:00 | NTF-014 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:31:57.284240+00:00 | NTF-015 | TODO -> WORKING | Started feature
+2026-10-24T11:31:57.951851+00:00 | NTF-015 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:31:58.011889+00:00 | NTF-016 | TODO -> WORKING | Started feature
+2026-10-24T11:31:58.705830+00:00 | NTF-016 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:32:14.591287+00:00 | NTF-018 | TODO -> WORKING | Started feature
+2026-10-24T11:32:15.672982+00:00 | NTF-018 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:32:15.740561+00:00 | NTF-019 | TODO -> WORKING | Started feature
+2026-10-24T11:32:16.538001+00:00 | NTF-019 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:32:16.603660+00:00 | NTF-020 | TODO -> WORKING | Started feature
+2026-10-24T11:32:17.321788+00:00 | NTF-020 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:32:17.382777+00:00 | NTF-021 | TODO -> WORKING | Started feature
+2026-10-24T11:32:18.061083+00:00 | NTF-021 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:33:42.942877+00:00 | NTF-028 | TODO -> WORKING | Started feature
+2026-10-24T11:33:44.837783+00:00 | NTF-028 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:33:44.935604+00:00 | NTF-029 | TODO -> WORKING | Started feature
+2026-10-24T11:33:46.329622+00:00 | NTF-029 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:33:46.407265+00:00 | NTF-033 | TODO -> WORKING | Started feature
+2026-10-24T11:33:47.423242+00:00 | NTF-033 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:34:08.916113+00:00 | NTF-034 | TODO -> WORKING | Started feature
+2026-10-24T11:34:10.272153+00:00 | NTF-034 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:34:10.347605+00:00 | NTF-041 | TODO -> WORKING | Started feature
+2026-10-24T11:34:11.111912+00:00 | NTF-041 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:36:09.042099+00:00 | NTF-042 | TODO -> WORKING | Started feature
+2026-10-24T11:36:09.817257+00:00 | NTF-042 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:36:09.880282+00:00 | NTF-043 | TODO -> WORKING | Started feature
+2026-10-24T11:36:10.357558+00:00 | NTF-043 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:36:10.419513+00:00 | NTF-045 | TODO -> WORKING | Started feature
+2026-10-24T11:36:10.902801+00:00 | NTF-045 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:36:17.473493+00:00 | NTF-047 | TODO -> WORKING | Started feature
+2026-10-24T11:36:18.066460+00:00 | NTF-047 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:36:18.129716+00:00 | NTF-048 | TODO -> WORKING | Started feature
+2026-10-24T11:36:18.656622+00:00 | NTF-048 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:37:51.618119+00:00 | NTF-056 | TODO -> WORKING | Started feature
+2026-10-24T11:37:52.784636+00:00 | NTF-056 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:37:52.849501+00:00 | NTF-057 | TODO -> WORKING | Started feature
+2026-10-24T11:37:53.601825+00:00 | NTF-057 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:37:53.663204+00:00 | NTF-060 | TODO -> WORKING | Started feature
+2026-10-24T11:37:54.405614+00:00 | NTF-060 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:37:54.476717+00:00 | NTF-062 | TODO -> WORKING | Started feature
+2026-10-24T11:37:55.237454+00:00 | NTF-062 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:40:28.021801+00:00 | NTF-070 | TODO -> WORKING | Started feature
+2026-10-24T11:40:29.472202+00:00 | NTF-070 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:40:29.538339+00:00 | NTF-071 | TODO -> WORKING | Started feature
+2026-10-24T11:40:30.314991+00:00 | NTF-071 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:40:30.378434+00:00 | NTF-073 | TODO -> WORKING | Started feature
+2026-10-24T11:40:31.136604+00:00 | NTF-073 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:40:31.202685+00:00 | NTF-076 | TODO -> WORKING | Started feature
+2026-10-24T11:40:31.888222+00:00 | NTF-076 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:42:26.527361+00:00 | NTF-084 | TODO -> WORKING | Started feature
+2026-10-24T11:42:27.512930+00:00 | NTF-084 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:42:27.577036+00:00 | NTF-085 | TODO -> WORKING | Started feature
+2026-10-24T11:42:28.335446+00:00 | NTF-085 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:42:28.398796+00:00 | NTF-087 | TODO -> WORKING | Started feature
+2026-10-24T11:42:29.143265+00:00 | NTF-087 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:42:29.206917+00:00 | NTF-089 | TODO -> WORKING | Started feature
+2026-10-24T11:42:29.987019+00:00 | NTF-089 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:44:24.668301+00:00 | NTF-098 | TODO -> WORKING | Started feature
+2026-10-24T11:44:25.974245+00:00 | NTF-098 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:44:26.037624+00:00 | NTF-099 | TODO -> WORKING | Started feature
+2026-10-24T11:44:27.121136+00:00 | NTF-099 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:44:27.184107+00:00 | NTF-101 | TODO -> WORKING | Started feature
+2026-10-24T11:44:28.183799+00:00 | NTF-101 | WORKING -> COMPLETED | Completed: 
+2026-10-24T11:49:59.297575+00:00 | NTF-141 | TODO -> WORKING | Started feature
+2026-10-24T11:50:05.829302+00:00 | NTF-141 | WORKING -> COMPLETED | Completed: 
+2026-10-24T12:20:12.922193+00:00 | NTF-042 | VERIF:REAL -> VERIF:LOCAL_EQUIVALENT | Relabeled: Email SMTP/SES verified against local mail server equivalent
+2026-10-24T12:20:12.994382+00:00 | NTF-043 | VERIF:REAL -> VERIF:LOCAL_EQUIVALENT | Relabeled: SMS channel verified against local E.164 SMS provider simulator
+2026-10-24T16:31:57.153187+00:00 | NTF-002 | TODO -> WORKING | Started feature
+2026-10-24T16:32:19.539620+00:00 | NTF-002 | WORKING -> COMPLETED | Completed: Template database with versioning and channel schema
+2026-10-24T16:32:24.525218+00:00 | NTF-005 | TODO -> WORKING | Started feature
+2026-10-24T16:32:24.610050+00:00 | NTF-006 | TODO -> WORKING | Started feature
+2026-10-24T16:32:37.800834+00:00 | NTF-005 | WORKING -> COMPLETED | Completed: Provider configuration store with channel priority and credentials
+2026-10-24T16:32:38.519769+00:00 | NTF-006 | WORKING -> COMPLETED | Completed: Scheduled-job store for deferred notifications
+2026-10-24T16:32:57.057039+00:00 | NTF-008 | TODO -> WORKING | Started feature
+2026-10-24T16:34:42.710044+00:00 | NTF-008 | WORKING -> COMPLETED | Completed: Audit store with tenant isolation and structured query filtering
+2026-10-24T16:36:47.128645+00:00 | NTF-016 | TODO -> WORKING | Started feature
+2026-10-24T16:36:47.207695+00:00 | NTF-017 | TODO -> WORKING | Started feature
+2026-10-24T16:36:47.280866+00:00 | NTF-018 | TODO -> WORKING | Started feature
+2026-10-24T16:38:26.957858+00:00 | NTF-016 | WORKING -> COMPLETED | Completed: Message normalization for email canonicalization and E.164 phone numbers
+2026-10-24T16:38:27.686565+00:00 | NTF-017 | WORKING -> COMPLETED | Completed: Template selection with channel and version resolution
+2026-10-24T16:38:28.396904+00:00 | NTF-018 | WORKING -> COMPLETED | Completed: Collision-resistant prefixed notification ID generation
+2026-10-24T16:38:42.259851+00:00 | NTF-023 | TODO -> WORKING | Started feature
+2026-10-24T16:38:42.351054+00:00 | NTF-030 | TODO -> WORKING | Started feature
+2026-10-24T16:38:42.422673+00:00 | NTF-032 | TODO -> WORKING | Started feature
+2026-10-24T16:41:58.151558+00:00 | NTF-023 | WORKING -> COMPLETED | Completed: Tenant attribution with strict scoping and cross-tenant query isolation
+2026-10-24T16:41:58.877194+00:00 | NTF-030 | WORKING -> COMPLETED | Completed: Template approval state machine with role enforcement and audit logging
+2026-10-24T16:41:59.590998+00:00 | NTF-032 | WORKING -> COMPLETED | Completed: Template deactivation with role verification and audit entry
+2026-10-24T16:42:18.281923+00:00 | NTF-037 | TODO -> WORKING | Started feature
+2026-10-24T16:42:18.357164+00:00 | NTF-039 | TODO -> WORKING | Started feature
+2026-10-24T16:42:18.428108+00:00 | NTF-041 | TODO -> WORKING | Started feature
+2026-10-24T16:45:20.338409+00:00 | NTF-037 | WORKING -> COMPLETED | Completed: Language selection with fallback chain fr-CA to fr to en
+2026-10-24T16:45:21.065053+00:00 | NTF-039 | WORKING -> COMPLETED | Completed: Conditional template blocks via SandboxedEnvironment with SSTI protection
+2026-10-24T16:45:21.765107+00:00 | NTF-041 | WORKING -> COMPLETED | Completed: Dynamic subject line generation with length enforcement and truncation
+2026-10-24T16:46:14.302724+00:00 | NTF-048 | TODO -> WORKING | Started feature
+2026-10-24T16:46:14.377842+00:00 | NTF-049 | TODO -> WORKING | Started feature
+2026-10-24T16:46:14.446987+00:00 | NTF-051 | TODO -> WORKING | Started feature
+2026-10-24T16:47:48.842008+00:00 | NTF-048 | WORKING -> COMPLETED | Completed: Provider registry with multi-channel provider lookup and registration
+2026-10-24T16:47:49.341845+00:00 | NTF-049 | WORKING -> COMPLETED | Completed: Provider credential encryption at rest and output masking
+2026-10-24T16:47:49.806261+00:00 | NTF-051 | WORKING -> COMPLETED | Completed: Provider capability matrix with feature and payload size filtering
+2026-10-24T16:48:07.446276+00:00 | NTF-052 | TODO -> WORKING | Started feature
+2026-10-24T16:48:07.521973+00:00 | NTF-054 | TODO -> WORKING | Started feature
+2026-10-24T16:48:07.589169+00:00 | NTF-057 | TODO -> WORKING | Started feature
+2026-10-24T16:52:54.741648+00:00 | NTF-052 | WORKING -> COMPLETED | Completed: Deterministic provider selection by capability, health, and cost
+2026-10-24T16:52:55.456342+00:00 | NTF-054 | WORKING -> COMPLETED | Completed: Provider fallback cascade in configured order without duplicate sends
+2026-10-24T16:52:56.189107+00:00 | NTF-057 | WORKING -> COMPLETED | Completed: Priority queue with starvation protection and lease concurrency locking
+2026-10-24T16:53:21.806310+00:00 | NTF-059 | TODO -> WORKING | Started feature
+2026-10-24T16:53:21.890543+00:00 | NTF-068 | TODO -> WORKING | Started feature
+2026-10-24T16:53:21.963389+00:00 | NTF-069 | TODO -> WORKING | Started feature
+2026-10-24T17:00:20.574396+00:00 | NTF-059 | WORKING -> COMPLETED | Completed: Scheduled queue with due timestamp polling verified with injected clock and real-time sleep
+2026-10-24T17:00:21.600155+00:00 | NTF-068 | WORKING -> COMPLETED | Completed: Worker polling using atomic lease reservation and lock tokens
+2026-10-24T17:00:22.850120+00:00 | NTF-069 | WORKING -> COMPLETED | Completed: 20 concurrent workers draining queue with zero duplicates via atomic update returning
+2026-10-24T17:00:36.153063+00:00 | NTF-075 | TODO -> WORKING | Started feature
+2026-10-24T17:00:36.257300+00:00 | NTF-076 | TODO -> WORKING | Started feature
+2026-10-24T17:00:36.340359+00:00 | NTF-077 | TODO -> WORKING | Started feature
+2026-10-24T17:03:10.625913+00:00 | NTF-075 | WORKING -> COMPLETED | Completed: Table-driven error classification for 4xx permanent vs 5xx/429/timeout transient
+2026-10-24T17:03:11.303768+00:00 | NTF-076 | WORKING -> COMPLETED | Completed: Provider timeout handling with retry eligibility and exponential backoff
+2026-10-24T17:03:11.987438+00:00 | NTF-077 | WORKING -> COMPLETED | Completed: Network failure classification for connection resets, dns errors, and timeouts
+2026-10-24T17:03:46.342411+00:00 | NTF-078 | TODO -> WORKING | Started feature
+2026-10-24T17:03:46.460435+00:00 | NTF-081 | TODO -> WORKING | Started feature
+2026-10-24T17:03:46.546566+00:00 | NTF-082 | TODO -> WORKING | Started feature
+2026-10-24T17:59:09.370235+00:00 | NTF-078 | WORKING -> COMPLETED | Completed: Rate-limit response handling with Retry-After header parsing and backoff delay
+2026-10-24T17:59:10.174748+00:00 | NTF-081 | WORKING -> COMPLETED | Completed: Dead-letter queue reprocessing with new attempt record and audit log
+2026-10-24T17:59:10.935873+00:00 | NTF-082 | WORKING -> COMPLETED | Completed: Manual retry workflow creating attempt and audit record, blocking retry of delivered
+2026-10-24T18:00:11.592265+00:00 | NTF-083 | TODO -> WORKING | Started feature
+2026-10-24T18:00:11.691172+00:00 | NTF-084 | TODO -> WORKING | Started feature
+2026-10-24T18:00:11.766318+00:00 | NTF-087 | TODO -> WORKING | Started feature
+2026-10-24T18:05:11.006843+00:00 | NTF-083 | WORKING -> COMPLETED | Completed: Replay failed notification creating new attempt record and audit entry
+2026-10-24T18:12:38.455295+00:00 | NTF-084 | WORKING -> COMPLETED | Completed: User notification preferences persistence and routing evaluation
+2026-10-24T18:12:46.600936+00:00 | NTF-087 | WORKING -> COMPLETED | Completed: Category preferences opt-in/opt-out with transactional bypass
+2026-10-24T18:13:16.961221+00:00 | NTF-089 | TODO -> WORKING | Started feature
+2026-10-24T18:13:17.084198+00:00 | NTF-093 | TODO -> WORKING | Started feature
+2026-10-24T18:13:53.645774+00:00 | NTF-089 | WORKING -> COMPLETED | Completed: Timezone-aware quiet hours suppression with DST and local timezone support
+2026-10-24T18:14:09.269848+00:00 | NTF-093 | WORKING -> COMPLETED | Completed: Preferred channel resolution with availability and opt-out fallback
+2026-10-24T18:14:47.443133+00:00 | NTF-101 | TODO -> WORKING | Started feature
+2026-10-24T18:14:47.522865+00:00 | NTF-103 | TODO -> WORKING | Started feature
+2026-10-24T18:14:47.604718+00:00 | NTF-105 | TODO -> WORKING | Started feature
+2026-10-24T18:18:19.614658+00:00 | NTF-101 | WORKING -> COMPLETED | Completed: Delivery API with idempotency, preference filtering, and attempt logging
+2026-10-24T18:18:28.569324+00:00 | NTF-103 | WORKING -> COMPLETED | Completed: Scheduling API for future notification jobs and due job polling
+2026-10-24T18:18:37.210434+00:00 | NTF-105 | WORKING -> COMPLETED | Completed: Retry, replay, and DLQ reprocess API endpoints
+2026-10-24T18:18:49.324182+00:00 | NTF-109 | TODO -> WORKING | Started feature
+2026-10-24T18:18:49.410602+00:00 | NTF-110 | TODO -> WORKING | Started feature
+2026-10-24T18:19:09.764763+00:00 | NTF-109 | WORKING -> COMPLETED | Completed: Health endpoint /healthz returning liveness status
+2026-10-24T18:19:17.805758+00:00 | NTF-110 | WORKING -> COMPLETED | Completed: Readiness endpoint /readyz verifying live database connection
+2026-10-24T18:19:50.554492+00:00 | NTF-114 | TODO -> WORKING | Started feature
+2026-10-24T18:19:50.659620+00:00 | NTF-116 | TODO -> WORKING | Started feature
+2026-10-24T18:19:50.736612+00:00 | NTF-117 | TODO -> WORKING | Started feature
+2026-10-24T18:21:20.643033+00:00 | NTF-114 | WORKING -> COMPLETED | Completed: Structured JSON logging with request tracing and credential redaction
+2026-10-24T18:21:35.905654+00:00 | NTF-116 | WORKING -> COMPLETED | Completed: Delivery success metrics with p50/p95 latency and provider breakdown
+2026-10-24T18:21:48.936214+00:00 | NTF-117 | WORKING -> COMPLETED | Completed: Delivery failure metrics with error classification breakdown
+2026-10-24T18:22:03.743824+00:00 | NTF-125 | TODO -> WORKING | Started feature
+2026-10-24T18:22:03.851760+00:00 | NTF-126 | TODO -> WORKING | Started feature
+2026-10-24T18:22:03.949706+00:00 | NTF-127 | TODO -> WORKING | Started feature
+2026-10-24T18:24:34.113920+00:00 | NTF-125 | WORKING -> COMPLETED | Completed: API key authentication with hashed SHA-256 tokens and revocation
+2026-10-24T18:24:45.082977+00:00 | NTF-126 | WORKING -> COMPLETED | Completed: Role-based access control with deny-by-default permission checks
+2026-10-24T18:24:55.228827+00:00 | NTF-127 | WORKING -> COMPLETED | Completed: Adversarial tenant isolation preventing cross-tenant access
+2026-10-24T18:25:09.553542+00:00 | NTF-133 | TODO -> WORKING | Started feature
+2026-10-24T18:25:27.596042+00:00 | NTF-133 | WORKING -> COMPLETED | Completed: Audit logging store for administrative actions with resource filtering
+2026-10-24T18:26:21.209618+00:00 | NTF-139 | TODO -> WORKING | Started feature
+2026-10-24T18:26:21.338721+00:00 | NTF-141 | TODO -> WORKING | Started feature
+2026-10-24T18:26:21.440463+00:00 | NTF-146 | TODO -> WORKING | Started feature
+2026-10-24T18:32:03.014850+00:00 | NTF-139 | WORKING -> COMPLETED | Completed: Delivery overview dashboard with KPI metrics, real-time activity feed, and status aggregations
+2026-10-24T18:32:19.214353+00:00 | NTF-141 | WORKING -> COMPLETED | Completed: Provider dashboard displaying fleet health, channels, and latency
+2026-10-24T18:32:31.489833+00:00 | NTF-146 | WORKING -> COMPLETED | Completed: Queue monitoring console displaying depths across queues and active leases
+2026-10-24T18:32:49.570038+00:00 | NTF-148 | TODO -> WORKING | Started feature
+2026-10-24T18:32:49.648602+00:00 | NTF-150 | TODO -> WORKING | Started feature
+2026-10-24T18:33:11.903102+00:00 | NTF-148 | WORKING -> COMPLETED | Completed: Dead-letter viewer console for failed notifications with retry capability
+2026-10-24T18:33:23.324424+00:00 | NTF-150 | WORKING -> COMPLETED | Completed: Delivery detail view modal with attempt history and timeline events
