@@ -39,6 +39,84 @@ from channels.providers import ProviderRegistry, EmailChannelProvider, SMSChanne
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_db()
+    try:
+        from datetime import timedelta
+        from db.database import AsyncSessionLocal
+        from models.store import NotificationRecord, NotificationStatus, NotificationPriority
+        async with AsyncSessionLocal() as session:
+            c_res = await session.execute(select(func.count(NotificationRecord.id)))
+            count = c_res.scalar() or 0
+            if count == 0:
+                now = datetime.now(timezone.utc)
+                records = [
+                    NotificationRecord(
+                        id="ntf-auth-001",
+                        tenant_id="tenant-default",
+                        user_id="user-alice",
+                        channel="EMAIL",
+                        priority=NotificationPriority.HIGH.value,
+                        status=NotificationStatus.DELIVERED.value,
+                        idempotency_key="idem-001",
+                        subject="alice@example.com",
+                        body="Your security verification code is 849201.",
+                        delivered_at=now - timedelta(minutes=2),
+                        created_at=now - timedelta(minutes=3)
+                    ),
+                    NotificationRecord(
+                        id="ntf-alert-002",
+                        tenant_id="tenant-default",
+                        user_id="user-bob",
+                        channel="SMS",
+                        priority=NotificationPriority.URGENT.value,
+                        status=NotificationStatus.DELIVERED.value,
+                        idempotency_key="idem-002",
+                        subject="+15550192834",
+                        body="High memory utilization alert on cluster-prod-02",
+                        delivered_at=now - timedelta(minutes=5),
+                        created_at=now - timedelta(minutes=6)
+                    ),
+                    NotificationRecord(
+                        id="ntf-webhook-003",
+                        tenant_id="tenant-default",
+                        user_id="user-carol",
+                        channel="WEBHOOK",
+                        priority=NotificationPriority.NORMAL.value,
+                        status=NotificationStatus.DELIVERED.value,
+                        idempotency_key="idem-003",
+                        subject="https://api.partner.io/events",
+                        body="Payment processed: $120.00",
+                        delivered_at=now - timedelta(minutes=10),
+                        created_at=now - timedelta(minutes=11)
+                    ),
+                    NotificationRecord(
+                        id="ntf-promo-004",
+                        tenant_id="tenant-default",
+                        user_id="user-david",
+                        channel="EMAIL",
+                        priority=NotificationPriority.LOW.value,
+                        status=NotificationStatus.QUEUED.value,
+                        idempotency_key="idem-004",
+                        subject="david@customer.org",
+                        body="Weekly Engineering Digest: New features released",
+                        created_at=now - timedelta(minutes=1)
+                    ),
+                    NotificationRecord(
+                        id="ntf-dlq-005",
+                        tenant_id="tenant-default",
+                        user_id="user-eve",
+                        channel="SMS",
+                        priority=NotificationPriority.HIGH.value,
+                        status=NotificationStatus.FAILED.value,
+                        idempotency_key="idem-005",
+                        subject="+15559999999",
+                        body="Carrier network timeout",
+                        created_at=now - timedelta(minutes=15)
+                    )
+                ]
+                session.add_all(records)
+                await session.commit()
+    except Exception as e:
+        print(f"Warning: Demo notification seed skipped: {e}")
     yield
 
 
