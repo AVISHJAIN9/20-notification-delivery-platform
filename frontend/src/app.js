@@ -1,5 +1,6 @@
-// OmniPost Operations Console Logic (NTF-139, NTF-141, NTF-146, NTF-148, NTF-150)
-const API_BASE = 'http://localhost:8200';
+const API_BASE = window.location.hostname.includes("github.io")
+  ? "https://aj-notification-delivery-platform.onrender.com"
+  : "http://localhost:8200";
 
 const state = {
   notifications: [],
